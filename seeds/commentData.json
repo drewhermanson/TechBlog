@@ -1,0 +1,26 @@
+[
+    {
+    "content": "I'm a software engineer with a passion for creating and building things. I'm always looking for new challenges and opportunities to learn and grow.",
+    "user_id": 1,
+    "date_created": "2021-09-01T00:00:00.000Z",
+    "blog_id": 1
+    },
+    {
+    "content": "I'm a software engineer with a passion for creating and building things. I'm always looking for new challenges and opportunities to learn and grow.",    
+    "user_id": 2,
+    "date_created": "2021-09-01T00:00:00.000Z",
+    "blog_id": 2
+    },
+    {
+    "content": "I'm a software engineer with a passion for creating and building things. I'm always looking for new challenges and opportunities to learn and grow.",    
+    "user_id": 3,
+    "date_created": "2021-09-01T00:00:00.000Z",
+    "blog_id": 3
+    },
+    {
+    "content": "I'm a software engineer with a passion for creating and building things. I'm always looking for new challenges and opportunities to learn and grow.",    
+    "user_id": 4,
+    "date_created": "2021-09-01T00:00:00.000Z",
+    "blog_id": 4
+    }
+]

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center">Dashboard</h2>
+            <h3 class="text-center">Your Blog Posts</h3>
+        </div>
+    </div>
+</div>
+
+{{#if logged_in}}
+    {{#each blogs}}
+        <div class="blog" data-post-id="{{id}}">
+            <h2>{{title}}</h2>
+            <p>{{content}}</p>
+            <p>Written by: {{user.username}}</p>
+            <p>Created on: {{date_created}}</p>
+            <h3>Comments</h3>
+            {{#each comments}}
+                <p>{{this.content}}</p>
+            {{/each}}
+            <form class="form comment-form">
+                <div class="form-group">
+                    <label for="comment">Add a comment</label>
+                    <input type="text" class="form-control" id="comment-text" name="comment">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    {{/each}}
+{{else}}
+    <p>You need to be logged in to view this page.</p>
+{{/if}}
+

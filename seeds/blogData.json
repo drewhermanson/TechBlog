@@ -1,0 +1,32 @@
+[
+    {
+        "title": "The Big Wheel",
+        "content": "The Big Wheel is a large ferris wheel located in the heart of the city. It is a popular tourist attraction and offers stunning views of the city and surrounding area.",
+        "date_created": "2021-10-15T09:00:00Z",
+        "user_id": 1
+    },
+    {
+        "title": "The City Zoo",
+        "content": "The City Zoo is home to a wide variety of animals from around the world. It is a popular destination for families and animal lovers alike.",
+        "date_created": "2021-10-15T09:00:00Z",
+        "user_id": 2
+    },
+    {
+        "title": "The City Museum",
+        "content": "The City Museum is a cultural institution that showcases the history and heritage of the city. It features a range of exhibits on art, history, and science, as well as a planetarium and an IMAX theater.",
+        "date_created": "2021-10-15T09:00:00Z",
+        "user_id": 1
+    },
+    {
+        "title": "The City Park",
+        "content": "The City Park is a large green space in the heart of the city. It is a popular destination for locals and visitors alike, offering a peaceful escape from the hustle and bustle of urban life.",
+        "date_created": "2021-10-15T09:00:00Z",
+        "user_id": 3
+    },
+    {
+        "title": "The City Beach",
+        "content": "The City Beach is a popular destination for sunbathers, swimmers, and water sports enthusiasts. It features a long sandy beach, clear blue waters, and stunning views of the city skyline.",
+        "date_created": "2021-10-15T09:00:00Z",
+        "user_id": 2
+    }
+]
