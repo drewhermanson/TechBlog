@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { Comment } = require('../../models');
+const { Blog } = require('../../models');
 
 router.post('/login', async (req, res) => {
   try {
@@ -60,5 +62,36 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+router.post('/blogs', async (req, res) => {
+  try {
+    const postData = await Blog.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
+router.post('/comments', async (req, res) => {
+  try {
+    const commentData = await Comment.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(commentData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
+
+
 
 module.exports = router;

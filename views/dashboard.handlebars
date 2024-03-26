@@ -2,12 +2,25 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h2 class="text-center">Dashboard</h2>
-            <h3 class="text-center">Your Blog Posts</h3>
         </div>
     </div>
 </div>
 
 {{#if logged_in}}
+
+    <form class="form create-form">
+        <h3 class="text-center">Create New Blog Post</h3>
+        <div class="form-group">
+            <label for="title">Blog Post Title</label>
+            <input type="text" class="form-control" id="post-title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="post-content" name="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3 class="text-center">Your Blog Posts</h3>
     {{#each blogs}}
         <div class="blog" data-post-id="{{id}}">
             <h2>{{title}}</h2>

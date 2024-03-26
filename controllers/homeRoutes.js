@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
         },
         { 
           model: Comment,
-          attributes: ['content', 'date_created'],
+          attributes: ['content', 'date_created', `user_id`],
         }
       ],
     });
@@ -59,6 +59,29 @@ router.get('/dashboard', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get(`/check`, async (req, res) => { 
+  try {
+    const commentData = await Comment.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+    res.json(comments);
+
+
+  }
+
+  catch (err) {
     res.status(500).json(err);
   }
 });
