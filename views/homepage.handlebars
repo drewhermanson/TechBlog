@@ -1,23 +1,25 @@
 {{#each blogs}}
-  <div class="blog" data-post-id="{{id}}">
-    <h2>{{title}}</h2>
-    <p>{{content}}</p>
-    <p>Written by: {{user.username}}</p>
-    <p>Created on: {{date_created}}</p>
-    <h3>Comments</h3>
-    {{#each comments}}
-      <p>{{this.content}}</p>
-      <p>Written by: {{this.user_id}}</p>
-    {{/each}}
-
-
-    <form class="form comment-form">
-      <div class="form-group">
-        <label for="comment">Add a comment</label>
-        <input type="text" class="form-control" id="comment-text" name="comment">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div id="blogpost">
+  <div class="blog card" data-post-id="{{id}}">
+    <div class="card-body">
+      <h2 class="card-title">{{title}}</h2>
+      <p class="card-text">{{content}}</p>
+      <p class="card-text">Written by: {{user.username}}</p>
+      <p class="card-text">Created on: {{date_created}}</p>
+      <h3 class="card-title">Comments</h3>
+      {{#each comments}}
+        <p>{{this.content}}</p>
+        <p>Written by: {{this.user_id}}</p>
+      {{/each}}
+      <form class="form comment-form">
+        <div class="form-group">
+          <label for="comment">Add a comment</label>
+          <input type="text" class="form-control" id="comment-text" name="comment">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
+</div>
 {{/each}}
 

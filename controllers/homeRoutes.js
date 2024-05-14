@@ -14,7 +14,13 @@ router.get('/', async (req, res) => {
         },
         { 
           model: Comment,
-          attributes: ['content', 'date_created', `user_id`],
+          attributes: ['content', 'date_created', 'user_id'],
+          include: [
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
         }
       ],
     });
@@ -79,6 +85,38 @@ router.get(`/check`, async (req, res) => {
     res.json(comments);
 
 
+  }
+
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get(`/checkblogs`, async (req, res) => { 
+  try {
+    const blogData = await Blog.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          attributes: ['content', 'date_created', 'user_id'],
+          include: [
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
+        }
+      ],
+    });
+
+
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    res.json(blogs);
   }
 
   catch (err) {

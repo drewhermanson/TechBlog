@@ -1,8 +1,11 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
   
-    const content = document.querySelector('#comment-content').value.trim();
-    const blog_id = document.querySelector('#comment-blog-id').value.trim();
+    const content = event.target.querySelector('#comment-text').value.trim();
+    const blog_id = event.target.closest('.blog.card').getAttribute('data-post-id');
+    console.log(blog_id);
+    console.log(content);
+
   
     if (content) {
       const response = await fetch('/api/users/comments', {
@@ -50,7 +53,7 @@ if (blogForm) {
     blogForm.addEventListener('submit', createBlogHandler);
 }
 
-document
-    .querySelector('.comment-form')
-    .addEventListener('submit', commentFormHandler);
+document.querySelectorAll('.blog.card').forEach((blogCard) => {
+  blogCard.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+});
 
