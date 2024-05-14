@@ -9,7 +9,7 @@
       <h3 class="card-title">Comments</h3>
       {{#each comments}}
         <p>{{this.content}}</p>
-        <p>Written by: {{this.user_id}}</p>
+        <p>Written by: {{this.user.username}}</p>
       {{/each}}
       <form class="form comment-form">
         <div class="form-group">
